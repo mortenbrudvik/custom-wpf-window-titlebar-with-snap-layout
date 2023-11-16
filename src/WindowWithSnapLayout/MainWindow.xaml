@@ -5,9 +5,9 @@
                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                xmlns:controlzex="urn:controlzex"
                                mc:Ignorable="d"
-                               Title="MainWindow"
                                Background="{DynamicResource WindowBrush}"
                                Icon="/Images/app.ico"
+                               Title="MainWindow"
                                Height="700" Width="1200"
                                FlowDirection="LeftToRight"
                                GlowColor="Gray"
@@ -18,8 +18,7 @@
                                SizeToContent="Manual"
                                Topmost="False"
                                MinWidth="500" MinHeight="300">
-   <Grid SnapsToDevicePixels="True">
-
+    <Grid SnapsToDevicePixels="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="36" />
             <RowDefinition Height="*" />
@@ -50,10 +49,11 @@
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-
+                    
+                    <!-- Refresh Button -->
                     <Button
-                        Command="{Binding RefreshCommand}"
                         RenderOptions.EdgeMode="Aliased"
+                        Command="{Binding RefreshCommand}"
                         Style="{StaticResource TitleBarButtonStyle}"
                         controlzex:NonClientControlProperties.HitTestResult="MINBUTTON"
                         controlzex:NonClientControlProperties.ClickStrategy="AutomationPeer"
@@ -69,7 +69,7 @@
                                 VerticalAlignment="Bottom" />
                         </Grid>
                     </Button>
-
+                    
                     <!-- Minimize Button -->
                     <Button
                         Command="{Binding MinimizeCommand}"
@@ -91,7 +91,7 @@
                         Command="{Binding MaximizeRestoreCommand}"
                         Style="{StaticResource TitleBarButtonStyle}"
                         IsEnabled="{Binding IsEnabled, ElementName=MaximizeButton}"
-                        controlzex:NonClientControlProperties.ClickStrategy="AutomationPeer" 
+                        controlzex:NonClientControlProperties.ClickStrategy="AutomationPeer"
                         controlzex:NonClientControlProperties.HitTestResult="MAXBUTTON">
                         <Path
                             Width="46"
@@ -105,7 +105,7 @@
                     <Button
                         Name="RestoreButton"
                         Command="{Binding MaximizeRestoreCommand}"
-                        controlzex:NonClientControlProperties.ClickStrategy="AutomationPeer" 
+                        controlzex:NonClientControlProperties.ClickStrategy="AutomationPeer"
                         controlzex:NonClientControlProperties.HitTestResult="MAXBUTTON"
                         Style="{StaticResource TitleBarButtonStyle}">
                         <Path
