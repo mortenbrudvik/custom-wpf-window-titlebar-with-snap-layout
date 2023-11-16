@@ -8,12 +8,12 @@ public partial class MainWindow
     {
         InitializeComponent();
         DataContext = this;
-        var stateManager = new WindowStateManager(this);
+        var state = new WindowState(this);
         
         RefreshCommand = new RelayCommand(() => { });
-        MinimizeCommand = new RelayCommand(() => stateManager.Minimize());
-        MaximizeRestoreCommand = new RelayCommand(() => stateManager.MaximizeRestore());
-        CloseCommand = new RelayCommand(() => stateManager.Close());
+        MinimizeCommand = new RelayCommand(() => state.Minimize());
+        MaximizeRestoreCommand = new RelayCommand(() => state.MaximizeRestore());
+        CloseCommand = new RelayCommand(() => state.Close());
     }
     public RelayCommand RefreshCommand { get; set; }
     public RelayCommand MinimizeCommand { get; set; }
